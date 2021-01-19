@@ -1,6 +1,8 @@
 import pygame, random
 
-rect = pygame.Rect([random.randint(1, 400), random.randint(1, 400), 42, 82])
+sdanie=pygame.Rect([100,300,262,216])
+
+rect = pygame.Rect([10, 10, 42, 82])
 ak1=10
 ak2=-10
 
@@ -17,5 +19,3 @@ def up(fly):
     if what == 1:
         rect.y -= fly
 
-
-sdanie=100,100,777,574
