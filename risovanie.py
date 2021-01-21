@@ -6,23 +6,36 @@ screen = pygame.display.set_mode([1300, 700])
 # загружаем картинку фона
 fon = pygame.image.load('skins_and_world/world_1_1_1.png')
 
-draw.rect(fon,[0,0,0],model.sdanie)
-
 house = pygame.image.load('skins_and_world/zombie house 1.jpg')
 
-house=help.izmeni_kartinku(house,262,216,[255,255,255],0)
-
-fon.blit(house, model.sdanie)
+house = help.izmeni_kartinku(house, 262, 216, [255, 255, 255], 0)
 
 player_ran_1 = pygame.image.load('skins_and_world/survivor.png').convert()
 player_ran_1 = help.izmeni_kartinku(player_ran_1, 42, 82, [0, 0, 0], 20)
 
+sdvig_x = 100
+
+sdvig_y = 200
 
 def paint_1():
+    global sdvig_x,sdvig_y
+
     # рисуем кадр
+    screen.fill([0, 0, 0])
+    sdvig_x = 650 - model.rect.centerx
+    sdvig_y = 350 - model.rect.centery
+    screen.blit(fon, sdvig([0, 1]))
 
-    screen.blit(fon, [0, 1])
+    screen.blit(house, sdvig(model.sdanie))
 
-    screen.blit(player_ran_1, model.rect)
+    screen.blit(player_ran_1, sdvig(model.rect))
 
     pygame.display.flip()
+
+
+def sdvig(rect):
+    if isinstance(rect, pygame.Rect):
+        rect = pygame.Rect(rect)
+    rect[0] += sdvig_x
+    rect[1] += sdvig_y
+    return rect
