@@ -13,6 +13,10 @@ house = help.izmeni_kartinku(house, 262, 216, [255, 255, 255], 0)
 player_ran_1 = pygame.image.load('skins_and_world/survivor.png').convert()
 player_ran_1 = help.izmeni_kartinku(player_ran_1, 42, 82, [0, 0, 0], 20)
 
+house1=pygame.image.load('skins_and_world/house1.2,.png')
+
+house1=help.izmeni_kartinku(house1,386,380,[48,50,45],10)
+
 sdvig_x = 100
 
 sdvig_y = 200
@@ -27,6 +31,8 @@ def paint_1():
     screen.blit(fon, sdvig([0, 1]))
 
     screen.blit(house, sdvig(model.sdanie))
+
+    screen.blit(house1,sdvig(model.sdanie1))
 
     screen.blit(player_ran_1, sdvig(model.rect))
 
