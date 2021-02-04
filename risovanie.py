@@ -15,6 +15,9 @@ house = help.izmeni_kartinku(house, 262, 216, [255, 255, 255], 0)
 player_ran_1 = pygame.image.load('skins_and_world/survivor.png').convert()
 player_ran_1 = help.izmeni_kartinku(player_ran_1, 42, 82, [0, 0, 0], 20)
 
+player_heart=pygame.image.load('skins_and_world/zombie_game_heart.png')
+zombie_heart=pygame.transform.scale(player_heart,[70,70])
+
 zombie1=pygame.image.load('skins_and_world/zombie_BETA_VERSION.png')
 zombie1=help.izmeni_kartinku(zombie1,42,82,[0,0,0],60)
 
@@ -40,13 +43,24 @@ def paint_1():
     screen.blit(house1,sdvig(model.sdanie1))
 
     screen.blit(player_ran_1, sdvig(model.rect))
+    player_heerd()
 
     screen.blit(zombie1,sdvig([0,100]))
+    zombie_heerd()
 
     pygame.draw.rect(screen,[255,0,0],sdvig(model.sdanie),2)
     pygame.draw.rect(screen,[255,0,0],sdvig(model.sdanie1),2)
 
     pygame.display.flip()
+
+def player_heerd():
+    screen.blit(player_heart,[1150,0])
+    screen.blit(player_heart,[1050,0])
+    screen.blit(player_heart,[950,0])
+
+def zombie_heerd():
+    screen.blit(zombie_heart,[50,50])
+
 
 
 def sdvig(rect):
