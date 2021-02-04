@@ -1,6 +1,8 @@
 import pygame, help, model
 from pygame import draw
 
+
+
 screen = pygame.display.set_mode([1300, 700])
 
 # загружаем картинку фона
@@ -13,7 +15,10 @@ house = help.izmeni_kartinku(house, 262, 216, [255, 255, 255], 0)
 player_ran_1 = pygame.image.load('skins_and_world/survivor.png').convert()
 player_ran_1 = help.izmeni_kartinku(player_ran_1, 42, 82, [0, 0, 0], 20)
 
-house1=pygame.image.load('skins_and_world/house1.2,.png')
+zombie1=pygame.image.load('skins_and_world/zombie_BETA_VERSION.png')
+zombie1=help.izmeni_kartinku(zombie1,42,82,[0,0,0],60)
+
+house1=pygame.image.load('skins_and_world/house_11.jpg')
 
 house1=help.izmeni_kartinku(house1,386,380,[48,50,45],10)
 
@@ -35,6 +40,11 @@ def paint_1():
     screen.blit(house1,sdvig(model.sdanie1))
 
     screen.blit(player_ran_1, sdvig(model.rect))
+
+    screen.blit(zombie1,sdvig([0,100]))
+
+    pygame.draw.rect(screen,[255,0,0],sdvig(model.sdanie),2)
+    pygame.draw.rect(screen,[255,0,0],sdvig(model.sdanie1),2)
 
     pygame.display.flip()
 
