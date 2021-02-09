@@ -4,6 +4,8 @@ sdanie = pygame.Rect([100, 300, 262, 216])
 
 sdanie1 = pygame.Rect([500, 500, 386, 380])
 
+zombie_rect=pygame.Rect(400,100,46,80)
+
 rect = pygame.Rect([10, 10, 42, 82])
 ak1 = 10
 ak2 = -10

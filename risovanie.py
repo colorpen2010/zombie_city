@@ -4,6 +4,7 @@ from pygame import draw
 
 
 screen = pygame.display.set_mode([1300, 700])
+pygame.display.set_caption("zombie city")
 
 # загружаем картинку фона
 fon = pygame.image.load('skins_and_world/world_1_1_1.png')
@@ -16,7 +17,10 @@ player_ran_1 = pygame.image.load('skins_and_world/survivor.png').convert()
 player_ran_1 = help.izmeni_kartinku(player_ran_1, 42, 82, [0, 0, 0], 20)
 
 player_heart=pygame.image.load('skins_and_world/zombie_game_heart.png')
-zombie_heart=pygame.transform.scale(player_heart,[70,70])
+
+player_heart=help.izmeni_kartinku(player_heart,73,69,[255,255,255],1)
+
+zombie_heart=pygame.transform.scale(player_heart,[30,30])
 
 zombie1=pygame.image.load('skins_and_world/zombie_BETA_VERSION.png')
 zombie1=help.izmeni_kartinku(zombie1,42,82,[0,0,0],60)
@@ -45,11 +49,8 @@ def paint_1():
     screen.blit(player_ran_1, sdvig(model.rect))
     player_heerd()
 
-    screen.blit(zombie1,sdvig([0,100]))
+    screen.blit(zombie1,sdvig(model.zombie_rect))
     zombie_heerd()
-
-    pygame.draw.rect(screen,[255,0,0],sdvig(model.sdanie),2)
-    pygame.draw.rect(screen,[255,0,0],sdvig(model.sdanie1),2)
 
     pygame.display.flip()
 
@@ -59,7 +60,10 @@ def player_heerd():
     screen.blit(player_heart,[950,0])
 
 def zombie_heerd():
-    screen.blit(zombie_heart,[50,50])
+    x=model.zombie_rect.x-10
+    y=model.zombie_rect.y-50
+    screen.blit(zombie_heart,sdvig([x,y]))
+
 
 
 
