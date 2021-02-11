@@ -55,9 +55,12 @@ def paint_1():
     pygame.display.flip()
 
 def player_heerd():
-    screen.blit(player_heart,[1150,0])
-    screen.blit(player_heart,[1050,0])
-    screen.blit(player_heart,[950,0])
+    spisc=range(model.heart)
+    shethic=1150
+    for heart in spisc:
+        screen.blit(player_heart, [shethic, 0])
+        shethic-= 100
+
 
 def zombie_heerd():
     x=model.zombie_rect.x-10
