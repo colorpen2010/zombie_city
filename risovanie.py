@@ -13,7 +13,7 @@ house = pygame.image.load('skins_and_world/zombie house 1.jpg')
 
 house = help.izmeni_kartinku(house, 262, 216, [255, 255, 255], 0)
 
-player_ran_1 = pygame.image.load('skins_and_world/survivor.png').convert()
+player_ran_1 = pygame.image.load('skins_and_world/player_version_1_is_1.png').convert()
 player_ran_1 = help.izmeni_kartinku(player_ran_1, 42, 82, [0, 0, 0], 20)
 
 player_heart=pygame.image.load('skins_and_world/zombie_game_heart.png')
@@ -46,8 +46,8 @@ def paint_1():
 
     screen.blit(house1,sdvig(model.sdanie1))
 
-    screen.blit(player_ran_1, sdvig(model.rect))
     player_heerd()
+    player()
 
     screen.blit(zombie1,sdvig(model.zombie_rect))
     zombie_heerd()
@@ -60,7 +60,18 @@ def player_heerd():
     for heart in spisc:
         screen.blit(player_heart, [shethic, 0])
         shethic-= 100
-
+def player():
+    global player_ran_1
+    print(model.poworot)
+    screen.blit(player_ran_1, sdvig(model.rect))
+    if model.poworot=='left':
+        player_ran_1=pygame.image.load('skins_and_world/left.png')
+    if model.poworot=='right':
+        player_ran_1 = pygame.image.load('skins_and_world/right.png')
+    if model.poworot=='up':
+        player_ran_1 = pygame.image.load('skins_and_world/up.png')
+    if model.poworot=='down':
+        player_ran_1 = pygame.image.load('skins_and_world/down.png')
 
 def zombie_heerd():
     x=model.zombie_rect.x-10

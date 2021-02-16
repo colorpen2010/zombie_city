@@ -11,6 +11,7 @@ zombie_rect = pygame.Rect(400, 100, 46, 80)
 rect = pygame.Rect([10, 10, 42, 82])
 ak1 = 1
 ak2 = -1
+poworot='right'
 
 
 def right(shag):
