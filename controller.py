@@ -22,3 +22,6 @@ def control_1():
         elif e.type == pygame.KEYDOWN and e.key == pygame.K_DOWN:
             model.poworot='down'
             model.up(model.ak1)
+
+        if e.type == pygame.MOUSEBUTTONDOWN and e.button == 1:
+            model.ataka_player1()

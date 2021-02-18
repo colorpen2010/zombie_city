@@ -2,6 +2,8 @@ import pygame, random
 
 heart = 3
 
+zona_ataki=None
+
 sdanie = pygame.Rect([100, 300, 262, 216])
 
 sdanie1 = pygame.Rect([500, 500, 386, 380])
@@ -46,3 +48,7 @@ def up(fly):
     if what == 1:
         rect.y -= fly*10
         heart -= 1
+
+def ataka_player1():
+    global zona_ataki
+    zona_ataki = pygame.Rect([0, 0, 100, 100])
