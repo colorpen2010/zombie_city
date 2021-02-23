@@ -37,8 +37,8 @@ def paint_1():
 
     # рисуем кадр
     screen.fill([0, 0, 0])
-    sdvig_x = 650 - model.rect.centerx
-    sdvig_y = 350 - model.rect.centery
+    sdvig_x = 650 - model.player_rect.centerx
+    sdvig_y = 350 - model.player_rect.centery
     screen.blit(fon, sdvig([0, 1]))
 
     screen.blit(house, sdvig(model.sdanie))
@@ -66,7 +66,7 @@ def player_heerd():
 
 def player():
     global player_ran_1
-    screen.blit(player_ran_1, sdvig(model.rect))
+    screen.blit(player_ran_1, sdvig(model.player_rect))
     if model.poworot == 'left':
         player_ran_1 = pygame.image.load('skins_and_world/left.png')
     if model.poworot == 'right':
