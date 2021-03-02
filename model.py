@@ -2,13 +2,15 @@ import pygame, random
 
 heart = 3
 
+zombie_heart=3
+
 zona_ataki = None
 
 sdanie = pygame.Rect([100, 300, 262, 216])
 
 sdanie1 = pygame.Rect([500, 500, 386, 380])
 
-zombie_rect = pygame.Rect(400, 100, 46, 80)
+zombie_rect = pygame.Rect(450, 150, 46, 80)
 
 player_rect = pygame.Rect([10, 10, 42, 82])
 ak1 = 1
@@ -51,7 +53,8 @@ def up(fly):
 
 
 def ataka_player1():
-    global zona_ataki
+    global zona_ataki,zombie_heart
     zona_ataki = pygame.Rect([player_rect.x,player_rect.y, 100, 100])
     if zona_ataki.colliderect(zombie_rect):
         print('show youself')
+        zombie_heart-=1

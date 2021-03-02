@@ -80,7 +80,12 @@ def player():
 def zombie_heerd():
     x = model.zombie_rect.x - 10
     y = model.zombie_rect.y - 50
-    screen.blit(zombie_heart, sdvig([x, y]))
+    spisc = range(model.zombie_heart)
+    shethic_x = model.zombie_rect.x+50
+    shethic_y=model.zombie_rect.y-50
+    for heart in spisc:
+        screen.blit(zombie_heart, sdvig([shethic_x, shethic_y]))
+        shethic_x -= 50
 
 
 def sdvig(rect):
