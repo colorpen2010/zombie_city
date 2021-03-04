@@ -54,7 +54,6 @@ def up(fly):
 
 def ataka_player1():
     global zona_ataki,zombie_heart
-    zona_ataki = pygame.Rect([player_rect.x,player_rect.y, 100, 100])
+    zona_ataki = pygame.Rect([player_rect.x-23,player_rect.y-40, 46+player_rect.w, 80+player_rect.h])
     if zona_ataki.colliderect(zombie_rect):
-        print('show youself')
         zombie_heart-=1

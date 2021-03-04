@@ -47,7 +47,7 @@ def paint_1():
 
     player_heerd()
     if model.zona_ataki is not None:
-        pygame.draw.rect(screen,[102,102,102],sdvig(model.zona_ataki))
+        pygame.draw.rect(screen, [102, 102, 102], sdvig(model.zona_ataki))
     player()
 
     screen.blit(zombie1, sdvig(model.zombie_rect))
@@ -66,23 +66,32 @@ def player_heerd():
 
 def player():
     global player_ran_1
-    screen.blit(player_ran_1, sdvig(model.player_rect))
+
     if model.poworot == 'left':
         player_ran_1 = pygame.image.load('skins_and_world/left.png')
+        player_ran_1=help.izmeni_kartinku(player_ran_1,37,81,[7,8,18],10)
+
     if model.poworot == 'right':
         player_ran_1 = pygame.image.load('skins_and_world/right.png')
+        player_ran_1=help.izmeni_kartinku(player_ran_1,39,83,[7,8,18],10)
+
     if model.poworot == 'up':
         player_ran_1 = pygame.image.load('skins_and_world/up.png')
+        player_ran_1 = help.izmeni_kartinku(player_ran_1, 42, 79, [7, 8, 18], 10)
+
     if model.poworot == 'down':
         player_ran_1 = pygame.image.load('skins_and_world/down.png')
+        player_ran_1 = help.izmeni_kartinku(player_ran_1, 41, 77, [7, 8, 18], 10)
+
+    screen.blit(player_ran_1, sdvig(model.player_rect))
 
 
 def zombie_heerd():
     x = model.zombie_rect.x - 10
     y = model.zombie_rect.y - 50
     spisc = range(model.zombie_heart)
-    shethic_x = model.zombie_rect.x+50
-    shethic_y=model.zombie_rect.y-50
+    shethic_x = model.zombie_rect.x + 50
+    shethic_y = model.zombie_rect.y - 50
     for heart in spisc:
         screen.blit(zombie_heart, sdvig([shethic_x, shethic_y]))
         shethic_x -= 50
