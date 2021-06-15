@@ -12,11 +12,12 @@ sdanie1 = pygame.Rect([500, 500, 386, 380])
 
 zombie_rect = pygame.Rect(450, 150, 46, 80)
 
-player_rect = pygame.Rect([10, 10, 42, 82])
+player_rect = pygame.Rect([5000/2,5000/2, 42, 82])
 ak1 = 1
 ak2 = -1
 poworot = 'right'
 
+treex=pygame.Rect([5000/2,5000/2],[160,165])
 
 def right(shag):
     global heart

@@ -1,11 +1,12 @@
 import pygame, help, model
 from pygame import draw
 
-screen = pygame.display.set_mode([1300, 700])
+screen = pygame.display.set_mode([1300, 1300])
 pygame.display.set_caption("zombie city")
 
 # загружаем картинку фона
 fon = pygame.image.load('skins_and_world/world_1_1_1.png')
+fon = pygame.transform.scale(fon,[5000,5000])
 
 house = pygame.image.load('skins_and_world/zombie house 1.jpg')
 
@@ -24,8 +25,9 @@ zombie1 = pygame.image.load('skins_and_world/zombie_BETA_VERSION.png')
 zombie1 = help.izmeni_kartinku(zombie1, 42, 82, [0, 0, 0], 60)
 
 house1 = pygame.image.load('skins_and_world/house_11.jpg')
-
 house1 = help.izmeni_kartinku(house1, 386, 380, [48, 50, 45], 10)
+
+sematree = pygame.image.load('skins_and_world/tree sema.png')
 
 sdvig_x = 100
 
@@ -42,6 +44,8 @@ def paint_1():
     screen.blit(fon, sdvig([0, 1]))
 
     screen.blit(house, sdvig(model.sdanie))
+
+    screen.blit(sematree, sdvig(model.treex))
 
     screen.blit(house1, sdvig(model.sdanie1))
 
