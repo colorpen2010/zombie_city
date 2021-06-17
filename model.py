@@ -17,7 +17,12 @@ ak1 = 1
 ak2 = -1
 poworot = 'right'
 
-treex=pygame.Rect([5000/2,5000/2],[160,165])
+treex1=pygame.Rect([2500,2500],[160,165])
+treex2=pygame.Rect([2200,2200],[160,165])
+treex3=pygame.Rect([2500,2200],[160,165])
+treex4=pygame.Rect([2200,2500],[160,165])
+
+tavriax=pygame.Rect([2000,2500],[150,150])
 
 def right(shag):
     global heart

@@ -27,7 +27,12 @@ zombie1 = help.izmeni_kartinku(zombie1, 42, 82, [0, 0, 0], 60)
 house1 = pygame.image.load('skins_and_world/house_11.jpg')
 house1 = help.izmeni_kartinku(house1, 386, 380, [48, 50, 45], 10)
 
+tavria=pygame.image.load('skins_and_world/tavria_right.png')
+tavria=help.izmeni_kartinku(tavria,150,150,[255,255,255],1)
+
 sematree = pygame.image.load('skins_and_world/tree sema.png')
+sematree =help. izmeni_kartinku(sematree,250,250,[255,255,255],10)
+sematree =help. izmeni_kartinku(sematree,250,250,[198,194,195],20)
 
 sdvig_x = 100
 
@@ -45,7 +50,12 @@ def paint_1():
 
     screen.blit(house, sdvig(model.sdanie))
 
-    screen.blit(sematree, sdvig(model.treex))
+    screen.blit(sematree, sdvig(model.treex1))
+    screen.blit(sematree, sdvig(model.treex2))
+    screen.blit(sematree, sdvig(model.treex3))
+    screen.blit(sematree, sdvig(model.treex4))
+
+    screen.blit(tavria,sdvig(model.tavriax))
 
     screen.blit(house1, sdvig(model.sdanie1))
 
