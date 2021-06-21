@@ -1,7 +1,7 @@
 import pygame, help, model
 from pygame import draw
 
-screen = pygame.display.set_mode([1300, 1300])
+screen = pygame.display.set_mode([1300, 1000])
 pygame.display.set_caption("zombie city")
 
 # загружаем картинку фона
@@ -62,7 +62,11 @@ def paint_1():
     player_heerd()
     if model.zona_ataki is not None:
         pygame.draw.rect(screen, [102, 102, 102], sdvig(model.zona_ataki))
-    player()
+    if model.playerincar==True:
+        playercar()
+
+    elif model.playerincar==False:
+        player()
 
     screen.blit(zombie1, sdvig(model.zombie_rect))
     zombie_heerd()
@@ -99,6 +103,28 @@ def player():
 
     screen.blit(player_ran_1, sdvig(model.player_rect))
 
+def playercar():
+    global player_ran_1
+
+
+
+    if model.poworot == 'left':
+        player_ran_1 = pygame.image.load('skins_and_world/tavria_left.png')
+        player_ran_1=help.izmeni_kartinku(player_ran_1,150,150,[255,255,255],1)
+
+    if model.poworot == 'right':
+        player_ran_1 = pygame.image.load('skins_and_world/tavria_right_and_human.png')
+        player_ran_1=help.izmeni_kartinku(player_ran_1,150,150,[237,28,36],1)
+
+    if model.poworot == 'up':
+        player_ran_1 = pygame.image.load('skins_and_world/tavria_up.png')
+        player_ran_1 = help.izmeni_kartinku(player_ran_1, 150,150, [255,255,255], 1)
+
+    if model.poworot == 'down':
+        player_ran_1 = pygame.image.load('skins_and_world/tavria_down.png')
+        player_ran_1 = help.izmeni_kartinku(player_ran_1, 150,150, [255,255,255], 1)
+
+    screen.blit(player_ran_1, sdvig(model.player_rect))
 
 def zombie_heerd():
     x = model.zombie_rect.x - 10

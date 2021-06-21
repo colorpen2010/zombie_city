@@ -15,7 +15,10 @@ zombie_rect = pygame.Rect(450, 150, 46, 80)
 player_rect = pygame.Rect([5000/2,5000/2, 42, 82])
 ak1 = 1
 ak2 = -1
-poworot = 'right'
+poworot = 'up'
+
+playerincar=False
+
 
 treex1=pygame.Rect([2500,2500],[160,165])
 treex2=pygame.Rect([2200,2200],[160,165])

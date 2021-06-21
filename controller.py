@@ -23,5 +23,15 @@ def control_1():
             model.poworot='down'
             model.up(model.ak1)
 
+        elif e.type == pygame.KEYDOWN and e.key == pygame.K_e:
+            model.playerincar=True
+            model.ak1 = 20
+            model.ak2 = -20
+
+        elif e.type==pygame.KEYDOWN and e.key == pygame.K_q:
+            model.playerincar = False
+            model.ak1 = 1
+            model.ak2 = -1
+
         if e.type == pygame.MOUSEBUTTONDOWN and e.button == 1:
             model.ataka_player1()
